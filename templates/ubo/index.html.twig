@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+{% for message in app.flashes('success') %}
+    <div class="alert alert-success flash-success text-center">
+        {{ message }}
+    </div>
+{% endfor %}
+
+<div class="container">
+    <div class="container-fluid">
+
+        <div class="row justify-content-center">
+            {% include 'ubo/_ubos_list.html.twig' with {ubos_list: ubos_list} %}
+        </div>
+
+        <div class="row justify-content-center">
+            <button class="btn btn-primary btn-block" id="add-ubo-btn" data-url="{{path('uboAdd')}}">Add UBO</button>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-auto" id="add-ubo">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

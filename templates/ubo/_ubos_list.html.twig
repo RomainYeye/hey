@@ -1,0 +1,23 @@
+<div id="ubos-list">
+    <div class="col-12">
+        <div class="row">
+            {% for ubo in ubos_list %}
+                <div class="col-4 border rounded p-3 m-2">
+                    <div class="row">
+                        <div class="col-12 h3 text-uppercase">
+                            {{ubo.firstName}} {{ubo.lastName}} 
+                        </div>
+                    </div>
+                    <div class="row justify-content-end">
+                        <div class="col-auto">
+                            <button class="edit-ubo-btn btn btn-primary text-uppercase btn-sm" data-url = "{{ path('uboEdit', {'id': ubo.id}) }}">Modifier</button>
+                        </div>
+                        <div class="col-auto">
+                            <button class="remove-ubo-btn btn btn-danger text-uppercase btn-sm" data-url = "{{ path('uboRemove', {'id': ubo.id}) }}">Supprimer</button>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
